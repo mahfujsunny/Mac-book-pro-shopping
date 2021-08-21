@@ -1,21 +1,7 @@
-function productType(product, price) {
-	const productCost = document.getElementById(product + '-price');
-	const productValue = price;
-	productCost.innerText = productValue;
-
-	// calculate
-	calculated();
-}
-
-// calculate total price
-function totalPrice(product) {
-	const costType = document.getElementById(product + '-price');
-	const costText = costType.innerText;
-	const costConvertToNumber = parseFloat(costText);
-	return costConvertToNumber;
-};
-
-function calculated() {
+/***************************** 
+     Calculate and Functions
+*****************************/
+function calculate() {
 	const bestPrice = totalPrice('best');
 	const memoryPrice = totalPrice('memory');
 	const storagePrice = totalPrice('storage');
@@ -26,42 +12,67 @@ function calculated() {
     
 };
 
-//////// Button Addition ////////////
+function productCustomize(product, price) {
+	const productCost = document.getElementById(product + '-price');
+	const productValue = price;
+	productCost.innerText = productValue;
 
-///////// Memory section /////////
+	calculate();
+}
+
+function totalPrice(product) {
+	const costType = document.getElementById(product + '-price');
+	const costText = costType.innerText;
+	const costConvertToNumber = parseFloat(costText);
+	return costConvertToNumber;
+};
+
+
+/***********************
+Button Addition 
+************************/
+
+/*********************************
+     Memory Customize Buttons 
+**********************************/
 document.getElementById('memory-8gb').addEventListener('click', function () {
-	productType('memory', 0);
+	productCustomize('memory', 0);
 });
 
 document.getElementById('memory-16gb').addEventListener('click', function () {
-	productType('memory', 180)
+	productCustomize('memory', 180)
 });
 
-///////// Storage section //////////
-
+/***********************************  
+     Storage Customize section
+************************************/
 document.getElementById('storage-256gb').addEventListener('click', function () {
-	productType('storage', 0)
+	productCustomize('storage', 0)
 });
 
 document.getElementById('storage-512gb').addEventListener('click', function () {
-	productType('storage', 100)
+	productCustomize('storage', 100)
 });
 
 document.getElementById('storage-1tb').addEventListener('click', function () {
-	productType('storage', 180)
+	productCustomize('storage', 180)
 });
 
-//////////////// Delivery Section //////////
+/***********************************  
+     Delivery Customize section
+************************************/
 
 document.getElementById('delivery-free').addEventListener('click', function () {
-	productType('delivery', 0)
+	productCustomize('delivery', 0)
 });
  
 document.getElementById('delivery-charged').addEventListener('click', function () {
-	productType('delivery', 20)
+	productCustomize('delivery', 20)
 });
 
-//////////// Promo Code Section ///////////////
+/***********************************  
+     Promo-code discount section
+************************************/
 
 document.getElementById('discount').addEventListener('click', function () {
 	const bestPrice = totalPrice('best');
