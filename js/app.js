@@ -83,7 +83,9 @@ document.getElementById('discount').addEventListener('click', function () {
 	document.getElementById('total-price').innerText = productTotalPrice;
 	document.getElementById('final-cost').innerText = productTotalPrice;
 
-    ////// promo 
+    /*****************
+         Promo Code
+     *****************/
     const promoInput = document.getElementById('promo-input');
 	const promoInputText = promoInput.value;
 
